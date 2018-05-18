@@ -8,13 +8,13 @@ public class Order implements CRUD<Food>{
 
 	private int ID;
 	private Table table;
-	private static List<Food> listFood = new ArrayList<Food>();
+	private List<Food> listFoods = new ArrayList<Food>();
 	
-	public Order(int ID, Table table, List<Food> listFood) {
+	public Order(int ID, Table table, List<Food> listFoods) {
 		super();
 		this.ID = ID;
 		this.table = table;
-		this.listFood = listFood;
+		this.listFoods = listFoods;
 	}
 	public int getID() {
 		return ID;
@@ -33,11 +33,11 @@ public class Order implements CRUD<Food>{
 	}
 
 	public List<Food> getlistFood() {
-		return listFood;
+		return listFoods;
 	}
 
-	public void setlistFood(List<Food> listFood) {
-		this.listFood = listFood;
+	public void setlistFood(List<Food> listFoods) {
+		this.listFoods = listFoods;
 	}
 	
 //	================= Create New Food=======================
@@ -65,7 +65,7 @@ public class Order implements CRUD<Food>{
 				System.out.print("Do you want to add more food ?[Y/N]:   ");
 			    input.nextLine();
 			    f = new Food(ID, name, price);
-			    listFood.add(f);
+			    listFoods.add(f);
 			} while (input.nextLine().equalsIgnoreCase("y"));
 			
 		
@@ -120,7 +120,7 @@ public class Order implements CRUD<Food>{
 	}
 
 	public String toString() {
-		System.out.println("\t\t----------------------List of order----------------------");
+		System.out.println("----------------------List of order----------------------");
 		System.out.println("Order #"+ID+" | Table #" );
 		System.out.println("[Code\t\t\tName\t\t\tPrice]");
 		return  " "+ID+"\t\t\t";
